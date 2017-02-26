@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Mini HRD</title>
+</head>
+
+<body>
+    <h1>Silahkan Login</h1>
+    <form action="/login/" method="POST">
+        {% csrf_token %}
+
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>Username: <input type="text" name="username" value="" placeholder="silahkan isi username.." /></p>
+        <p>Password: <input type="password" name="password" value="" placeholder="silahkan isi password.." /></p>
+        <p><input type="submit" value="Log In" /></p>
+    </form>
+</body>
+
+</html>
+<!-- tag template { % digunakan untuk melakukan pemanggilan fungsi atau melakukan suatu operasi misalnya looping -->

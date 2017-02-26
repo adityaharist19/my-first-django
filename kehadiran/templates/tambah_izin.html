@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini HRD</title>
+</head>
+<body>
+    <h1>Form Pengajuan Izin Kerja</h1>
+
+    <!--Sebuah form django baik itu ModelForm ataupun Form, dapat di-render dalam berbagai cara.
+    Kita dapat merendernya sebagai paragraf, unordered list, tabel, atapun manual rendering.
+    Di dalam source code ini akan di-render dalam bentuk paragraf.
+    Kita akan memanggil method as_p untuk melakukan hal tersebut.-->
+    <form action="/pengajuan_izin/" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit" />
+    </form>
+
+    <p><a href="/">Kembali ke Profil</a> </p>
+</body>
+</html>
